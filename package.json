@@ -1,0 +1,17 @@
+{
+  "name": "order-summary-component-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Order summary card coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "watch:css": "postcss css/styles.css --dir dist -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
+    "postcss-preset-env": "^7.8.3"
+  }
+}

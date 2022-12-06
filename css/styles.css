@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  /* Primary */
+  --PaleBlue: hsl(225, 100%, 94%);
+  --BrightBlue: hsl(245, 75%, 52%);
+
+  /* Neutral */
+  --Verypaleblue: hsl(225, 100%, 98%);
+  --Desaturatedblue: hsl(224, 23%, 55%);
+  --Darkblue: hsl(223, 47%, 23%);
+
+  --Font: "Red Hat Display", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--Font);
+  background-image: url(../images/pattern-background-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--PaleBlue);
+}
+
+.container {
+  background: #fff;
+  border-radius: 1rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 3rem);
+  transform: translate(-50%, -50%);
+  height: auto;
+
+  & .intro {
+    & img {
+      width: 100%;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    & .intro__content {
+      padding: 1.5rem;
+
+      & .intro__text {
+        text-align: center;
+
+        & h1 {
+          color: var(--Darkblue);
+          font-weight: 900;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        & p {
+          line-height: 1.5;
+          color: var(--Desaturatedblue);
+          font-size: 14px;
+        }
+      }
+
+      & .intro__plan {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--Verypaleblue);
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+        & .intro__music {
+          display: flex;
+          align-items: center;
+          column-gap: 1rem;
+
+          & .intro__price {
+            & h2 {
+              font-size: 14px;
+              margin-bottom: 0.25rem;
+            }
+
+            & p {
+              color: var(--Desaturatedblue);
+              font-size: 15px;
+            }
+          }
+        }
+
+        & a {
+          font-weight: 600;
+          font-size: 14px;
+        }
+      }
+
+      & .intro__buttons {
+        margin-top: 2rem;
+        text-align: center;
+
+        & button {
+          width: 100%;
+          border: none;
+          outline: none;
+          padding: 1rem 0;
+          border-radius: 0.5rem;
+          color: #fff;
+          font-weight: 900;
+          background-color: var(--BrightBlue);
+          font-family: var(--Font);
+          letter-spacing: 1px;
+          margin-bottom: 1.5rem;
+        }
+
+        & p {
+          color: var(--Desaturatedblue);
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+
+  body {
+    background-image: url(../images/pattern-background-desktop.svg);
+  }
+}
