@@ -159,6 +159,12 @@ section {
   }
 }
 
+@media screen and (min-width: 560px) {
+  .card__container {
+    width: 375px;
+  }
+}
+
 @media screen and (max-height: 600px) {
   body {
     position: relative;
