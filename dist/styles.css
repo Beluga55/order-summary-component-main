@@ -9,6 +9,7 @@
   --Verypaleblue: hsl(225, 100%, 98%);
   --Desaturatedblue: hsl(224, 23%, 55%);
   --Darkblue: hsl(223, 47%, 23%);
+  --DarkBluelight: hsla(245, 75%, 52%, 0.3);
 
   --Font: "Red Hat Display", sans-serif;
 }
@@ -28,120 +29,139 @@ body {
   background-size: cover;
   background-color: hsl(225, 100%, 94%);
   background-color: var(--PaleBlue);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
 }
 
-.container {
+section {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.card__container {
+  width: 100%;
+  height: auto;
   background: #fff;
   border-radius: 1rem;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: calc(100% - 3rem);
-  transform: translate(-50%, -50%);
-  height: auto;
 }
 
-.container .intro img {
-  width: 100%;
-  border-radius: 1rem 1rem 0 0;
-}
-
-.container .intro .intro__content {
-  padding: 1.5rem;
-}
-
-.container .intro .intro__content .intro__text {
-  text-align: center;
-}
-
-.container .intro .intro__content .intro__text h1 {
-  color: hsl(223, 47%, 23%);
-  color: var(--Darkblue);
-  font-weight: 900;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.container .intro .intro__content .intro__text p {
-  line-height: 1.5;
-  color: hsl(224, 23%, 55%);
-  color: var(--Desaturatedblue);
-  font-size: 14px;
-}
-
-.container .intro .intro__content .intro__plan {
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: hsl(225, 100%, 98%);
-  background: var(--Verypaleblue);
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
-
-.container .intro .intro__content .intro__plan .intro__music {
-  display: flex;
-  align-items: center;
-  -moz-column-gap: 1rem;
-  column-gap: 1rem;
-}
-
-.container .intro .intro__content .intro__plan .intro__music .intro__price h2 {
-  font-size: 14px;
-  margin-bottom: 0.25rem;
-}
-
-.container .intro .intro__content .intro__plan .intro__music .intro__price p {
-  color: hsl(224, 23%, 55%);
-  color: var(--Desaturatedblue);
-  font-size: 15px;
-}
-
-.container .intro .intro__content .intro__plan a {
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.container .intro .intro__content .intro__buttons {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.container .intro .intro__content .intro__buttons button {
-  width: 100%;
-  border: none;
-  outline: none;
-  padding: 1rem 0;
-  border-radius: 0.5rem;
-  color: #fff;
-  font-weight: 900;
-  background-color: hsl(245, 75%, 52%);
-  background-color: var(--BrightBlue);
-  font-family: "Red Hat Display", sans-serif;
-  font-family: var(--Font);
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
-}
-
-.container .intro .intro__content .intro__buttons p {
-  color: hsl(224, 23%, 55%);
-  color: var(--Desaturatedblue);
-  font-weight: 900;
-}
-
-@media screen and (min-width: 576px) {
-  .container {
-    width: 350px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
+.card__container img {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
   }
 
+.card__container .card__content {
+    padding: 2rem 1.5rem;
+  }
+
+.card__container .card__content h1 {
+      text-align: center;
+      color: hsl(223, 47%, 23%);
+      color: var(--Darkblue);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+.card__container .card__content p {
+      text-align: center;
+      color: hsl(224, 23%, 55%);
+      color: var(--Desaturatedblue);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+.card__container .card__content .card__plan {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: hsl(225, 100%, 98%);
+      background-color: var(--Verypaleblue);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+.card__container .card__content .card__plan .card__plan-first {
+        display: flex;
+        align-items: center;
+        -moz-column-gap: 0.75rem;
+             column-gap: 0.75rem;
+      }
+
+.card__container .card__content .card__plan .card__plan-first img {
+          width: 3rem;
+        }
+
+.card__container .card__content .card__plan .card__plan-first .card__first-desc {
+          display: grid;
+          grid-row-gap: 0.2rem;
+          row-gap: 0.2rem;
+        }
+
+.card__container .card__content .card__plan .card__plan-first .card__first-desc h2,
+        .card__container .card__content .card__plan .card__plan-first .card__first-desc p {
+          font-size: 14px;
+        }
+
+.card__container .card__content .card__plan .card__plan-first .card__first-desc p {
+          margin-bottom: 0;
+        }
+
+.card__container .card__content .card__plan .card__plan-second a {
+        font-size: 14px;
+        color: hsl(245, 75%, 52%);
+        color: var(--BrightBlue);
+        font-weight: 700;
+      }
+
+.card__container .card__content .card__cta {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+    }
+
+.card__container .card__content .card__cta button {
+        border: none;
+        background-color: hsl(245, 75%, 52%);
+        background-color: var(--BrightBlue);
+        padding: 1rem 0;
+        border-radius: 0.5rem;
+        color: #fff;
+        font-family: "Red Hat Display", sans-serif;
+        font-family: var(--Font);
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        box-shadow: 0 10px 10px 0 hsla(245, 75%, 52%, 0.3);
+        box-shadow: 0 10px 10px 0 var(--DarkBluelight);
+      }
+
+.card__container .card__content .card__cta a {
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        color: hsl(224, 23%, 55%);
+        color: var(--Desaturatedblue);
+        letter-spacing: 0.5px;
+      }
+
+@media screen and (min-width: 400px) {
   body {
-    background-image: url(../images/pattern-background-desktop.svg);
+    margin: 1rem 0;
+  }
+
+  .card__container {
+    width: 375px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  body {
+    position: relative;
   }
 }

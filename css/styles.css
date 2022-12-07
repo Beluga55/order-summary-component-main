@@ -9,6 +9,7 @@
   --Verypaleblue: hsl(225, 100%, 98%);
   --Desaturatedblue: hsl(224, 23%, 55%);
   --Darkblue: hsl(223, 47%, 23%);
+  --DarkBluelight: hsla(245, 75%, 52%, 0.3);
 
   --Font: "Red Hat Display", sans-serif;
 }
@@ -26,116 +27,128 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--PaleBlue);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
 }
 
-.container {
+section {
+  margin-inline: 1.5rem;
+}
+
+.card__container {
+  width: 100%;
+  height: auto;
   background: #fff;
   border-radius: 1rem;
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: calc(100% - 3rem);
-  transform: translate(-50%, -50%);
-  height: auto;
+  & img {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+  }
 
-  & .intro {
-    & img {
-      width: 100%;
-      border-radius: 1rem 1rem 0 0;
+  & .card__content {
+    padding: 2rem 1.5rem;
+
+    & h1 {
+      text-align: center;
+      color: var(--Darkblue);
+      font-weight: 900;
+      margin-bottom: 1rem;
     }
 
-    & .intro__content {
-      padding: 1.5rem;
+    & p {
+      text-align: center;
+      color: var(--Desaturatedblue);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
 
-      & .intro__text {
-        text-align: center;
+    & .card__plan {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--Verypaleblue);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
 
-        & h1 {
-          color: var(--Darkblue);
-          font-weight: 900;
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-        }
-
-        & p {
-          line-height: 1.5;
-          color: var(--Desaturatedblue);
-          font-size: 14px;
-        }
-      }
-
-      & .intro__plan {
-        margin-top: 2rem;
+      & .card__plan-first {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        background: var(--Verypaleblue);
-        padding: 1rem;
-        border-radius: 0.5rem;
+        column-gap: 0.75rem;
 
-        & .intro__music {
-          display: flex;
-          align-items: center;
-          column-gap: 1rem;
-
-          & .intro__price {
-            & h2 {
-              font-size: 14px;
-              margin-bottom: 0.25rem;
-            }
-
-            & p {
-              color: var(--Desaturatedblue);
-              font-size: 15px;
-            }
-          }
+        & img {
+          width: 3rem;
         }
 
-        & a {
-          font-weight: 600;
+        & .card__first-desc {
+          display: grid;
+          row-gap: 0.2rem;
+        }
+
+        & .card__first-desc h2,
+        & .card__first-desc p {
           font-size: 14px;
+        }
+
+        & .card__first-desc p {
+          margin-bottom: 0;
         }
       }
 
-      & .intro__buttons {
-        margin-top: 2rem;
+      & .card__plan-second a {
+        font-size: 14px;
+        color: var(--BrightBlue);
+        font-weight: 700;
+      }
+    }
+
+    & .card__cta {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+
+      & button {
+        border: none;
+        background-color: var(--BrightBlue);
+        padding: 1rem 0;
+        border-radius: 0.5rem;
+        color: #fff;
+        font-family: var(--Font);
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        box-shadow: 0 10px 10px 0 var(--DarkBluelight);
+      }
+
+      & a {
         text-align: center;
-
-        & button {
-          width: 100%;
-          border: none;
-          outline: none;
-          padding: 1rem 0;
-          border-radius: 0.5rem;
-          color: #fff;
-          font-weight: 900;
-          background-color: var(--BrightBlue);
-          font-family: var(--Font);
-          letter-spacing: 1px;
-          margin-bottom: 1.5rem;
-        }
-
-        & p {
-          color: var(--Desaturatedblue);
-          font-weight: 900;
-        }
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--Desaturatedblue);
+        letter-spacing: 0.5px;
       }
     }
   }
 }
 
-@media screen and (min-width: 576px) {
-  .container {
-    width: 350px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
+@media screen and (min-width: 400px) {
+  body {
+    margin: 1rem 0;
   }
 
+  .card__container {
+    width: 375px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-height: 600px) {
   body {
-    background-image: url(../images/pattern-background-desktop.svg);
+    position: relative;
   }
 }
